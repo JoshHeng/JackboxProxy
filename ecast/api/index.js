@@ -10,7 +10,7 @@ module.exports = async (req, res) => {
 	}
 	catch (error) {
 		if (error.response) {
-			return res.status(error.response.statusCode).send(error.response.data);
+			return res.status(error.response.status).send(error.response.data);
 		}
 		return res.status(500).send('Invalid');
 	}
