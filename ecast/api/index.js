@@ -1,4 +1,7 @@
+const request = require('request');
+
 module.exports = (req, res) => {
-	const { name = 'World' } = req.query;
-	res.send(`Hello ${name}!`);
+	const { path } = req.query;
+	if (!path) res.send('Invalid path');
+	request(`https://ecast.jackboxgames.com${path}`).pipe(res);
 };
