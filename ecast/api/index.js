@@ -1,6 +1,6 @@
 const axios = require('axios');
 
-module.exports = (req, res) => {
+module.exports = async (req, res) => {
 	const { path } = req.query;
 	if (!path) res.send('Invalid path');
 
