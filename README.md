@@ -12,3 +12,6 @@ Currently available at: https://jackbox.joshheng.co.uk
 
 ## Issues & Contributions
 Although this project shouldn't need any further changes, Pull Requests and Issues are welcomed
+
+### Thanks To
+- [@dustinrouillard](https://github.com/dustinrouillard) for removing the need for an additional Vercel proxy
