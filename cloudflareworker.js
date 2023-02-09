@@ -23,9 +23,9 @@ async function handleRequest(request) {
     });
     let text = await req.text();
 
-    text = text.replace(bundleHost, `${url.hostname}/bundles`);
-    text = text.replace(defaultDestination, url.hostname);
-    text = text.replace(ecastDestination, url.hostname);
+    text = text.replaceAll(bundleHost, `${url.hostname}/bundles`);
+    text = text.replaceAll(defaultDestination, url.hostname);
+    text = text.replaceAll(ecastDestination, url.hostname);
 
     return new Response(text, req);
   } else {
@@ -38,9 +38,9 @@ async function handleRequest(request) {
 
     if (['application/javascript', 'text/javascript', 'text/css'].includes(req.headers.get("content-type"))) {
       let text = await req.text();
-      text = text.replace(bundleHost, `${url.hostname}/bundles`);
-      text = text.replace(defaultDestination, url.hostname);
-      text = text.replace(ecastDestination, url.hostname);
+      text = text.replaceAll(bundleHost, `${url.hostname}/bundles`);
+      text = text.replaceAll(defaultDestination, url.hostname);
+      text = text.replaceAll(ecastDestination, url.hostname);
 
       return new Response(text, req);
     }
