@@ -36,7 +36,7 @@ async function handleRequest(request) {
       request
     );
 
-    if (req.headers.get("content-type") == "application/javascript") {
+    if (req.headers.get("content-type") == "application/javascript" || req.headers.get("content-type") == "text/javascript") {
       let text = await req.text();
       text = text.replace(bundleHost, `${url.hostname}/bundles`);
       text = text.replace(defaultDestination, url.hostname);
